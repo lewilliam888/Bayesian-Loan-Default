@@ -29,11 +29,11 @@ A Bayesian logistic regression for loan default on the Lending Club dataset (1.2
 ```
 .
 ├── report.pdf              full technical writeup (11 pages)
-├── helpers.r               MH sampler + Cholesky-based mvtnorm
-├── data_prep.r             raw Kaggle CSV → cleaned dataset
-├── run_file.r              one synthetic dataset + MH (per seed)
-├── out_file.r              aggregates traces → coverage tables, figures
-├── real_data_fit.r         MH on real data → trace plots, posterior summary
+├── helpers.R               MH sampler + Cholesky-based mvtnorm
+├── data_prep.R             raw Kaggle CSV → cleaned dataset
+├── run_file.R              one synthetic dataset + MH (per seed)
+├── out_file.R              aggregates traces → coverage tables, figures
+├── real_data_fit.R         MH on real data → trace plots, posterior summary
 ├── workflow.sh             serial reproducibility pipeline
 └── batch_run.sh            LSF array job for parallel HPC execution
 ```
