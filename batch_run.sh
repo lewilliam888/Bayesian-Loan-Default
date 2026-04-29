@@ -1,4 +1,3 @@
-cat > batch_run.sh << 'EOF'
 #!/bin/tcsh
 #BSUB -J dsa595_sim[1-200]
 #BSUB -n 1
@@ -10,4 +9,3 @@ cat > batch_run.sh << 'EOF'
 module load R
 
 Rscript run_file.r $LSB_JOBINDEX output/traces/
-EOF
