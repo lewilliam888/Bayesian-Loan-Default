@@ -37,5 +37,3 @@ job on an HPC cluster.
 - R (base only)
 - LSF / bsub for HPC
 - LaTeX for the report
-
-## Repo layout
