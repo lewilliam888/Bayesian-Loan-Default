@@ -37,3 +37,30 @@ job on an HPC cluster.
 - R (base only)
 - LSF / bsub for HPC
 - LaTeX for the report
+
+## Repo layout
+
+├── report.pdf              full technical writeup (11 pages)
+├── helpers.r               MH sampler + Cholesky-based mvtnorm
+├── data_prep.r             raw Kaggle CSV → cleaned dataset
+├── run_file.r              one synthetic dataset + MH (per seed)
+├── out_file.r              aggregates traces → coverage tables, figures
+├── real_data_fit.r         MH on real data → trace plots, posterior summary
+├── workflow.sh             serial reproducibility pipeline
+├── batch_run.sh            LSF array job for parallel HPC execution
+└── output/figures/         simulation study plots
+
+## Reproducing
+
+The cleaned dataset is not included in the repo (full Kaggle download
+is 1.6 GB). To regenerate:
+
+1. Download `accepted_2007_to_2018Q4.csv` from
+   [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club).
+2. `Rscript data_prep.r path/to/raw.csv data/lending_club_clean.csv`
+3. `bash workflow.sh` (serial) or `bsub < batch_run.sh` (HPC array)
+
+## Report
+
+Full methodology, simulation results, and interpretation in
+[`report.pdf`](report.pdf).
